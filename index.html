@@ -4,52 +4,66 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leo's cv</title>
+    <title>Leo's CV</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <div id="header-wrapper">
         <div>
-          <img src="selfie.jpg" alt="selfie" height="100" />
+          <img src="selfie.jpg" alt="Selfie" height="100" />
         </div>
         <div>
           <h1>Leonard Popescu</h1>
-          <h2>Programator Software</h2>
+          <h2 id="job-title">Programator Software</h2>
         </div>
       </div>
 
       <ul id="top-menu-bar">
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Languages</a></li>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#" onclick="showSkills()">Skills</a>
+        </li>
+        <li>
+          <a href="#">Projects</a>
+        </li>
+        <li>
+          <a href="#">Languages</a>
+        </li>
       </ul>
     </header>
 
     <section id="content">
       <div id="side-menu">
         <section>
-          <form action="" method="get">
+          <form action="" method="post">
             <label for="userEmail">Email</label>
             <input
               type="email"
               name="email"
               id="userEmail"
               placeholder="example@me.com"
-              required
+              required="required"
             />
+
             <button type="submit">Send</button>
           </form>
         </section>
-
         <section>M2</section>
       </div>
-      <div id="main">Main</div>
+      <div id="main">
+        <div class="page" id="home">HOME content...</div>
+        <div class="page" id="skills">Skills content...</div>
+        <div class="page" id="projects">Projects content...</div>
+        <div class="page" id="languages">Languages content...</div>
+      </div>
     </section>
 
     <footer>
       <a href="">Linkedin</a>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
