@@ -1,38 +1,42 @@
-var activePage = "home";
+var activePage = "skills";
 
-var homePage = document.getElementById(activePage);
-homePage.style.display = "block";
+show(activePage);
 
-function hidePage(id) {
+function hide(id) {
   document.getElementById(id).style.display = "none";
 }
-function showPage(id) {
+function show(id) {
   document.getElementById(id).style.display = "block";
 }
 
 function hideAllPages() {
-  hidePage("home");
-  hidePage("skills");
-  hidePage("projects");
-  hidePage("languages");
+  var pages = document.querySelectorAll("#main .page");
+  pages.forEach(function (page) {
+    hide(page.id);
+  });
 }
+
+function showPage(id) {
+  hideAllPages();
+  show(id);
+}
+
+document.querySelector("#top-menu-bar").addEventListener("click", function (e) {
+  if (e.target.matches("a")) {
+    var id = e.target.dataset.page;
+    showPage(id);
+  }
+});
 
 function showSkills() {
-  hideAllPages();
-  showPage("skills");
+  var skills = ["HTML", "CSS", "JS"];
+  var html = skills.map(function (skill) {
+    return `<li>${skill}</li>`;
+  });
+  console.warn(html);
+
+  var container = document.querySelector("#skills ul");
+  container.innerHTML = html.join("");
 }
 
-function showHome() {
-  hideAllPages();
-  showPage("home");
-}
-
-function showProjects() {
-  hideAllPages();
-  showPage("projects");
-}
-
-function showLanguages() {
-  hideAllPages();
-  showPage("languages");
-}
+showSkills();
