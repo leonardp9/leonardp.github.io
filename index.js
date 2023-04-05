@@ -29,8 +29,19 @@ document.querySelector("#top-menu-bar").addEventListener("click", function (e) {
 });
 
 function showSkills(skills) {
+  skills.sort(function (a, b) {
+    return b.endorcements - a.endorcements;
+  });
   var html = skills.map(function (skill) {
-    return `<li>${skill.name} - <span class="endorcements">${skill.endorcements}</span></li>`;
+    // var cls = "";
+    // if (skill.endorcements > 4) {
+    //   cls = 'class="important"';
+    // }
+    var cls = skill.endorcements > 4 ? "important" : "";
+    return `<li class="${cls}">
+      ${
+        skill.name
+      } ${skill.endorcements < 2 ? "" : `- <span class="endorcements">${skill.endorcements}</span>`}</li>`;
   });
 
   var container = document.querySelector("#skills ul");

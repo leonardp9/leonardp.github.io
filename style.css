@@ -168,11 +168,6 @@ li {
   color: #057988;
 }
 
-#skills li span {
-  font-weight: 200;
-  color: gray;
-}
-
 th {
   background: #d1e7ea;
 }
@@ -212,4 +207,12 @@ h1 {
 
 .endorcements {
   color: gray;
+}
+
+li.important {
+  font-weight: bold;
+}
+
+li.important .endorcements {
+  color: green;
 }
